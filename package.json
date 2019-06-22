@@ -1,0 +1,40 @@
+{
+  "name": "vkexecutepacker",
+  "version": "1.0.0",
+  "description": "VK API wrapper with execute packing ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NOCELL/vkExecutePacker.git"
+  },
+  "keywords": [
+    "vk",
+    "api",
+    "bot",
+    "execute"
+  ],
+  "author": "Oleg Zuev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NOCELL/vkExecutePacker/issues"
+  },
+  "homepage": "https://github.com/NOCELL/vkExecutePacker#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "prettier": {
+    "useTabs": true,
+    "printWidth": 100,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "jsxBracketSameLine": false,
+    "parser": "flow",
+    "semi": false
+  }
+}
