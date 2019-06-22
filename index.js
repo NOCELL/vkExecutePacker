@@ -11,7 +11,7 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-app.get('/method/:method', async (req, res) => {
+app.all('/method/:method', async (req, res) => {
 	try {
 		const { method } = req.params,
 			{ access_token, ...params } = req.body
