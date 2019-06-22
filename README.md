@@ -25,6 +25,12 @@ http://localhost:{порт, по умолчанию 4300}
 * Node.js 8+
 * npm
 
+#### Установка Node 12 и npm для Ubuntu
+```sh
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
 ### Установка
 
 ```sh
