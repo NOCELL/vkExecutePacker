@@ -31,12 +31,14 @@ app.all('/method/:method', async (req, res) => {
 		const response = await tokens[access_token].execute(method, params)
 		if (response.error_code !== undefined) {
 			res.json({
-				error_code: response.error_code,
-				error_msg: response.error_msg,
-				request_params: Object.entries(params).map(([key, value]) => ({
-					key,
-					value,
-				})),
+				error: {
+					error_code: response.error_code,
+					error_msg: response.error_msg,
+					request_params: Object.entries(params).map(([key, value]) => ({
+						key,
+						value,
+					})),
+				},
 			})
 		} else {
 			res.json({
