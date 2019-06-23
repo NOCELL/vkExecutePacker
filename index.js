@@ -13,9 +13,7 @@ app.use(bodyParser.json())
 
 app.all('/method/:method', async (req, res) => {
 	try {
-		const { method } = req.params,
-			{ access_token: token_in_body, ...params } = req.body
-		const access_token = token_in_body || req.query.access_token
+		const { method, access_token, ...params } = { ...req.body, ...req.params, ...req.query }
 		if (access_token === undefined) {
 			res.json({
 				error: 'No access_token',
