@@ -14,7 +14,8 @@ app.use(bodyParser.json())
 app.all('/method/:method', async (req, res) => {
 	try {
 		const { method } = req.params,
-			{ access_token, ...params } = req.body
+			{ access_token: token_in_body, ...params } = req.body
+		const access_token = token_in_body || req.params.access_token
 		if (tokens[access_token] === undefined) {
 			tokens[access_token] = vk(access_token)
 		}
