@@ -16,6 +16,15 @@ app.all('/method/:method', async (req, res) => {
 		const { method } = req.params,
 			{ access_token: token_in_body, ...params } = req.body
 		const access_token = token_in_body || req.query.access_token
+		if (access_token === undefined) {
+			res.json({
+				error: 'No access_token',
+				body: req.body,
+				params: req.params,
+				query: req.query,
+			})
+			return
+		}
 		if (tokens[access_token] === undefined) {
 			tokens[access_token] = vk(access_token)
 		}
